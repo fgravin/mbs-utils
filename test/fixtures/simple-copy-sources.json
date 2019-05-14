@@ -1,0 +1,25 @@
+{
+  "version": 8,
+  "name": "simple",
+  "sources": {
+    "geojson": {
+      "type": "geojson",
+      "data": "./examples/data/geojson/countries.geojson"
+    },
+    "raster": {
+      "url": "http://server/other-raster.json",
+      "type": "raster"
+    },
+    "vector": {
+      "url": "http://server/vector.json",
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "raster_layer",
+      "type": "raster",
+      "source": "raster"
+    }
+  ]
+}

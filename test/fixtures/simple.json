@@ -1,0 +1,71 @@
+{
+  "version": 8,
+  "name": "simple",
+  "sources": {
+    "geojson": {
+      "type": "geojson",
+      "data": "./examples/data/geojson/countries.geojson"
+    },
+    "raster": {
+      "url": "http://server/raster.json",
+      "type": "raster"
+    },
+    "vector": {
+      "url": "http://server/vector.json",
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(0,0,0,0)"
+      }
+    },
+    {
+      "id": "geojson_layer",
+      "type": "fill",
+      "source": "geojson",
+      "paint": {
+        "fill-color": "#A6CEE3",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "raster_layer",
+      "type": "raster",
+      "source": "raster",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "raster-opacity": 1,
+        "raster-brightness-min": 0.4,
+        "raster-brightness-max": 1,
+        "raster-saturation": 0,
+        "raster-contrast": 0.5,
+        "raster-fade-duration": 100
+      }
+    }, {
+      "id": "vecotr_layer",
+      "type": "vector",
+      "source": "vector",
+      "paint": {
+        "line-opacity": {
+          "base": 1,
+          "stops": [
+            [
+              13,
+              0
+            ],
+            [
+              13.5,
+              0.5
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
